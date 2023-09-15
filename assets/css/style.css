@@ -109,7 +109,16 @@ a{
     height: 100%;
     overflow-y: auto;
 }
-
+.prew_user{
+    padding: 0.5rem;
+    transition: all 0.2s;
+}
+.prew_user:hover{
+    background-color: var(--bz-gray-light);
+}
+.ora{
+    margin-left: auto;
+}
 
 
 

@@ -52,7 +52,25 @@
                     
                 </div>
                 <div class="search_bar"> ricerca utenti</div>
-                <div class="chat_list"> lista chat</div>    
+                <div class="chat_list">
+
+                    <!--  -->
+                    <div v-for="contact in contacts" class="prew_user d-flex">
+                      
+                        <div class="prew_user_img">
+                            <img class="prew_img" :src="contact.avatar" alt="">
+                        </div>
+
+                        <div class="prew_user_info">
+                            <h4>{{contact.name}}</h4>
+                            <small>ultimo messaggio inviato</small>
+                        </div>
+
+                        <div class="ora">12:00</div>
+                    </div>
+                    <!--  -->
+
+                </div>    
             </div>
 
             <div class="right_side">
