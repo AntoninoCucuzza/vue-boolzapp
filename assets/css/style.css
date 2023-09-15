@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: black;
+}
+main{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+#app{
+    background-color: aliceblue;
+    width: 80%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+/* left side */
+.admin{
+    background-color: green;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin_info{
+    justify-content: center;
+    align-items: center;
+}
+
+
+.alert{
+    background-color: saddlebrown;
+    height: 80px;
+
+    align-items: center;
+}
+
+.search_bar{
+    background-color:orange ;
+    height: 50px;
+
+    width: 100%;
+}
+
+.chat_list{
+    background-color: rgb(0, 217, 255);
+
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+
+
+
+
+
+/* right side */
+.chat{
+    flex-direction: column;
+    height: 100%;
+}
+
+.top{
+    background-color: greenyellow;
+
+
+    align-items: center;
+}
+
+.chat_preview{
+    background-color: aliceblue;
+
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-top: 3rem;
+}
+
+.bot{
+    background-color: gray;
+
+    padding: 0 1rem;
+}
+
+
+
+
+
+/* right top side */
+.user_in_chat{
+    width: 100%;
+    align-items: center;
+}
+
+.prew_img{
+    width: 50px;
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+
+
+
+
+
+/* right bot side */
+.chat_input{
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.emoji{
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat_input>
+.text>
+input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    padding: 1rem 0.5rem;
+    border-radius: 5px;
+}
+
+.vocal{
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* utility */
+
+[class^="col"] {
+    padding: 0;
+}
+
+.row{
+    display: flex;
+}
+.left_side{
+    background-color: rgb(104, 49, 49);
+    flex-direction: column;
+    width: calc(100% / 12 * 4);
+}
+.right_side{
+    background-color: rgb(67, 67, 138);
+    height: 100%;
+    width: calc(100% / 12 * 8);
+}
+
+.d-flex{
+    display: flex;
+}
+.img-flow{
+    border-radius: 50%;
+}
