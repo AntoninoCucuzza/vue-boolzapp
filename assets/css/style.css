@@ -124,8 +124,7 @@ a{
 
 .top{
     background-color: var(--bz-gray-light) ;
-
-
+    padding: 0 0.5rem;
     align-items: center;
 }
 
@@ -150,6 +149,17 @@ a{
 .user_in_chat{
     width: 100%;
     align-items: center;
+}
+
+.user_tools{
+    align-items: center;
+    color: var(--bz-dark-gray);
+}
+
+.search,
+.attach,
+.settings{
+    padding: 0.5rem;
 }
 
 .prew_img{
