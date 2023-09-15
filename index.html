@@ -60,7 +60,7 @@
                 <div class="chat_list">
 
                     <!--  -->
-                    <div v-for="(contact, i) in contacts" class="prew_user d-flex" :class="(i == activeChat ? 'active_chat' : '')">
+                    <div v-for="(contact, i) in contacts" class="prew_user d-flex" :class="(i == activeChat ? 'active_chat' : '')"  :id="i" @click="switchChat(i)">
                       
                         <div class="prew_user_img">
                             <img class="prew_img" :src="contact.avatar" alt="">
@@ -114,8 +114,7 @@
  
                     <div class="chat_preview">
                         <div class="messages d-flex">
-                            
-
+                        
                             <div v-for="text in contacts[activeChat].messages" :class="text.status === 'sent' ? 'sent' : 'received'">
                                 <p>{{text.message}}</p>
                             </div>

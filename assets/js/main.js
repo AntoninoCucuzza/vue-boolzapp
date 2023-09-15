@@ -109,7 +109,7 @@ data() {
             },
             {
                 name: 'Claudia',
-                avatar: './assets/img/avatar_5.jpg',
+                avatar: './assets/img/avatar_6.jpg',
                 visible: true,
                 messages: [
                     {
@@ -169,8 +169,15 @@ data() {
                 ],
             }
         ]
+      
     }
-}
+},
+methods:{
+    switchChat(i){
+        this.activeChat = i
+        console.log(this.activeChat);
+    }
+}, 
 }).mount('#app')
 
 
