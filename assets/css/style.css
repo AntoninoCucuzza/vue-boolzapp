@@ -5,8 +5,26 @@
 
 }
 
+:root
+{
+  --bz-dark-gray: #b1b1b1;
+  --bz-gray: #d9dbd5;
+  --bz-gray-light: #eaebeb;
+  --bz-gray-ligther: #fbfbfa;
+  --bz-white: white;
+  --bz-sand: #f3eeea;
+  --bz-dark: #000;
+  --bz-sky: #8fdafd;
+  --bz-dark-green: #019689;
+  --bz-green: #d5f9ba;
+}
+
 body{
-    background-color: black;
+    background-image: linear-gradient(to bottom, var(--bz-dark-green) 0, var(--bz-dark-green) 140px, var(--bz-gray) 140px, var(--bz-gray) 100%);
+    overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+
 }
 main{
     height: 100vh;
