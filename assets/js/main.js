@@ -178,7 +178,23 @@ methods:{
     },
     
     sendMessage() {
-        if (this.newMessage != '') {
+        if (this.newMessage == 'hello there') {
+            this.contacts[this.activeChat].messages.push({
+                date:'10/01/2020 16:15:22',
+                message: this.newMessage,
+                status: 'sent'
+            });
+            this.newMessage = '';
+            setTimeout(()=>{
+                this.contacts[this.activeChat].messages.push({
+                    date:'10/01/2020 16:15:22',
+                    message: 'https://www.youtube.com/watch?v=rEq1Z0bjdwc',
+                    status: 'recived'
+                });
+            },1000)
+            
+        }else if(this.newMessage !== ''){
+          
             this.contacts[this.activeChat].messages.push({
                 date:'10/01/2020 16:15:22',
                 message: this.newMessage,
@@ -186,7 +202,16 @@ methods:{
             });
             console.log(this.newMessage);
             this.newMessage = '';
-            
+            setTimeout(()=>{
+                
+                this.contacts[this.activeChat].messages.push({
+                    date:'10/01/2020 16:15:22',
+                    message: 'ok broski',
+                    status: 'recived'
+                });
+
+            },1000)
+
         }else{
             console.log('bruh');
         }

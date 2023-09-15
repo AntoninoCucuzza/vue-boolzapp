@@ -116,7 +116,7 @@
                         <div class="messages d-flex">
                         
                             <div v-for="text in contacts[activeChat].messages" :class="text.status === 'sent' ? 'sent' : 'received'">
-                                <p>{{text.message}}</p>
+                                <p class="wrapper">{{text.message}}</p>
                             </div>
                             
                         </div>
