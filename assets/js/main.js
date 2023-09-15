@@ -3,9 +3,8 @@ const { createApp } = Vue
 createApp({
 data() {
     return {
-        
+        newMessage:'',
         activeChat: 0,
-
         contacts: [
             {
                 name: 'Michele',
@@ -176,6 +175,22 @@ methods:{
     switchChat(i){
         this.activeChat = i
         console.log(this.activeChat);
+    },
+    
+    sendMessage() {
+        if (this.newMessage != '') {
+            this.contacts[this.activeChat].messages.push({
+                date:'10/01/2020 16:15:22',
+                message: this.newMessage,
+                status: 'sent'
+            });
+            console.log(this.newMessage);
+            this.newMessage = '';
+            
+        }else{
+            console.log('bruh');
+        }
+
     }
 }, 
 }).mount('#app')

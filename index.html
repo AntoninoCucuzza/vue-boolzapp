@@ -23,7 +23,7 @@
                         <div class="admin_img">
                             <img class="prew_img" src="./assets/img/avatar_io.jpg" alt="">
                         </div>
-                        <h4 class="admin_name">Antonino</h4>
+                        <h4 class="admin_name">Sofia</h4>
                     </div>
                     
                     <div class="admin_tools d-flex">
@@ -68,7 +68,7 @@
 
                         <div class="prew_user_info">
                             <h4>{{contact.name}}</h4>
-                            <small>ultimo messaggio inviato</small>
+                            <p>{{contact.messages[contact.messages.length - 1].message}}</p>
                         </div>
 
                         <div class="ora">12:00</div>
@@ -131,7 +131,7 @@
                             </div>
 
                             <div class="text d-flex">
-                                <input type="text" placeholder="scrivi un messaggio">
+                                <input type="text" @keyup.enter="sendMessage()" v-model="newMessage" placeholder="scrivi un messaggio">
                             </div>
 
                             <div class="vocal d-flex">
