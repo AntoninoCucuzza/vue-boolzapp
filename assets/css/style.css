@@ -133,6 +133,10 @@ a{
 .prew_user:hover{
     background-color: var(--bz-gray-light);
 }
+
+.active_chat{
+    background-color: var(--bz-gray-light);
+}
 .ora{
     margin-left: auto;
 }
