@@ -119,12 +119,23 @@
                     <div class="chat_preview">
                         <div class="messages d-flex">
                         
-                            <div v-for="text in contacts[activeChat].messages" :class="text.status === 'sent' ? 'sent' : 'received'">
-                                <p class="wrapper">{{text.message}}</p>
+                            <div class="d-flex messaggi" v-for="(text, i) in contacts[activeChat].messages" :class="text.status === 'sent' ? 'sent' : 'received'">
+                                <p class="wrapper">{{text.message}}</p> 
+                                
+                                <div class="menu" @click="menuOpen(i)" >
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                    <div>   
+                                        <ul  class="dropDown" :class="openMenu === false ? 'd-none' : 'dropDown' ">
+                                            <li>message info</li>
+                                            <li @click="deleteMessage(i)">delete message</li>
+                                        </ul>                   
+                                    </div>
+                                </div>
+
                             </div>
                             
                         </div>
-        
+                       
                     </div>
 
                     <div class="bot">

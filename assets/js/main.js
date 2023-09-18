@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
 data() {
     return {
+        openMenu: false,
         lookingFor:'',
         newMessage:'',
         activeChat: 0,
@@ -13,16 +14,19 @@ data() {
                 visible: true,
                 messages: [
                     {
+                        id: 1,
                         date: '10/01/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
+                        id: 2,
                         date: '10/01/2020 15:50:00',
                         message: 'Ricordati di stendere i panni',
                         status: 'sent'
                     },
                     {
+                        id: 3,
                         date: '10/01/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
@@ -231,8 +235,15 @@ methods:{
             contact.visible = userName.includes(userToSearch);
             });
         }
-    }
+    },
 
+    menuOpen(i){
+        this.openMenu/* [i] */ = !this.openMenu/* [i] */;
+        console.log(this.openMenu + '   ', this.openMenu[i]);
+    },
+    deleteMessage(i) {
+        this.contacts[this.activeChat].messages.splice(i, 1);
+      }
 }, 
 
 

@@ -188,6 +188,34 @@ a{
     background-color: var(--bz-green);
 
 }
+.messaggi{
+    align-items: center;
+    margin: 1rem;
+    word-wrap: break-word;
+}
+.menu{
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.dropDown{
+    background-color: var(--bz-white);
+    box-shadow: var(--bz-dark-gray) -5px 5px 15px 0px;
+    width: 150px;
+    list-style: none;
+    position: absolute;
+    inset: 0px auto auto 0px;
+    transform: translate(-100px, 30px);
+    color: var(--bz-dark);
+}
+
+.dropDown li{
+    text-align: center;
+    padding: 0.5rem;
+}
+
 
 
 .bot{
@@ -286,4 +314,8 @@ input{
 }
 .img-flow{
     border-radius: 50%;
+}
+
+.d-none{
+    display: none;
 }
