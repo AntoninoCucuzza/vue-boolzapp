@@ -55,7 +55,7 @@
                     <div class="btn_search d-flex">
                         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                     </div>
-                    <input type="text" placeholder="cerca o inizia una nuova chat"  v-on:keyup="filterChat()" v-model="lookingFor">
+                    <input required type="text" placeholder="cerca o inizia una nuova chat"  v-on:keyup="filterChat()" v-model="lookingFor">
                 </div>
                 <div class="chat_list">
 
@@ -89,11 +89,11 @@
                         <div class="user_in_chat d-flex">
 
                             <div class="user_img">
-                                <img class="prew_img" src="./assets/img/avatar_1.jpg" alt="">
+                                <img class="prew_img" :src="contacts[activeChat].avatar" alt="">
                             </div>
 
                             <div class="user_info">
-                                <h4>michele</h4>
+                                <h4>{{contacts[activeChat].name}}</h4>
                                 <small class="last_acces"> ultimo accesso alle 12:00</small>
                             </div>
 
@@ -122,7 +122,7 @@
                             <div class="d-flex messaggi" v-for="(text, i) in contacts[activeChat].messages" :class="text.status === 'sent' ? 'sent' : 'received'">
                                 <p class="wrapper">{{text.message}}</p> 
                                 
-                                <div class="menu" @click="menuOpen(i)" >
+                                <div class="menu" @click="menuOpen(i)" :id="i">
                                     <i class="fa-solid fa-chevron-down"></i>
                                     <div>   
                                         <ul  class="dropDown" :class="openMenu === false ? 'd-none' : 'dropDown' ">

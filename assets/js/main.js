@@ -183,43 +183,36 @@ methods:{
     },
     
     sendMessage() {
-        if (this.newMessage == 'hello there') {
-            this.contacts[this.activeChat].messages.push({
-                date:'10/01/2020 16:15:22',
-                message: this.newMessage,
-                status: 'sent'
-            });
-            this.newMessage = '';
-            setTimeout(()=>{
-                this.contacts[this.activeChat].messages.push({
-                    date:'10/01/2020 16:15:22',
-                    message: 'https://www.youtube.com/watch?v=rEq1Z0bjdwc',
-                    status: 'recived'
-                });
-            },1000)
-            
-        }else if(this.newMessage !== ''){
+        const invalidMessage = this.newMessage.trim();
+        if (invalidMessage == 'hello there') {
+            this.messaggio('https://www.youtube.com/watch?v=rEq1Z0bjdwc')
+         
+        }else if(invalidMessage !== ''){
           
+            this.messaggio('ok bro')
+
+        }else {
+            this.newMessage = 'questo e illegale'
+            this.messaggio('non inviare messaggi vuoti')
+        }
+    },
+    messaggio(text){
+        this.contacts[this.activeChat].messages.push({
+            date:'10/01/2020 16:15:22',
+            message: this.newMessage,
+            status: 'sent'
+        });
+        console.log(this.newMessage);
+        this.newMessage = '';
+        setTimeout(()=>{
+            
             this.contacts[this.activeChat].messages.push({
                 date:'10/01/2020 16:15:22',
-                message: this.newMessage,
-                status: 'sent'
+                message: text,
+                status: 'recived'
             });
-            console.log(this.newMessage);
-            this.newMessage = '';
-            setTimeout(()=>{
-                
-                this.contacts[this.activeChat].messages.push({
-                    date:'10/01/2020 16:15:22',
-                    message: 'ok broski',
-                    status: 'recived'
-                });
 
-            },1000)
-
-        }else{
-            console.log('bruh');
-        }
+        },1000)
     },
 
     filterChat(){
@@ -236,9 +229,9 @@ methods:{
             });
         }
     },
-
+    
     menuOpen(i){
-        this.openMenu/* [i] */ = !this.openMenu/* [i] */;
+        this.openMenu  = !this.openMenu;
         console.log(this.openMenu + '   ', this.openMenu[i]);
     },
     deleteMessage(i) {
