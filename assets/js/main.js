@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
 data() {
     return {
+        lookingFor:'',
         newMessage:'',
         activeChat: 0,
         contacts: [
@@ -215,9 +216,26 @@ methods:{
         }else{
             console.log('bruh');
         }
+    },
 
+    filterChat(){
+        const userToSearch = this.lookingFor.toLowerCase();
+
+        if(userToSearch === ''){
+            this.contacts.forEach(contact => {  
+            contact.visible = true;
+            });
+        }else{
+            this.contacts.forEach(contact => {
+            const userName = contact.name.toLowerCase();
+            contact.visible = userName.includes(userToSearch);
+            });
+        }
     }
+
 }, 
+
+
 }).mount('#app')
 
 

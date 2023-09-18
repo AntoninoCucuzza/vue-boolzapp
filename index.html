@@ -55,25 +55,29 @@
                     <div class="btn_search d-flex">
                         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                     </div>
-                    <input class="" type="text" placeholder="cerca o inizia una nuova chat ">
+                    <input type="text" placeholder="cerca o inizia una nuova chat"  v-on:keyup="filterChat()" v-model="lookingFor">
                 </div>
                 <div class="chat_list">
 
-                    <!--  -->
-                    <div v-for="(contact, i) in contacts" class="prew_user d-flex" :class="(i == activeChat ? 'active_chat' : '')"  :id="i" @click="switchChat(i)">
-                      
-                        <div class="prew_user_img">
-                            <img class="prew_img" :src="contact.avatar" alt="">
+                    <div v-for="(contact, i) in contacts" :class="(i == activeChat ? 'active_chat' : '')"  :id="i" @click="switchChat(i)" > 
+
+                        <div class="prew_user d-flex" v-show="contact.visible === true">
+                          
+                            <div class="prew_user_img">
+                                <img class="prew_img" :src="contact.avatar" alt="">
+                            </div>
+    
+                            <div class="prew_user_info">
+                                <h4>{{contact.name}}</h4>
+                                <p>{{contact.messages[contact.messages.length - 1].message}}</p>
+                            </div>
+    
+                            <div class="ora">12:00</div>
+                            
                         </div>
 
-                        <div class="prew_user_info">
-                            <h4>{{contact.name}}</h4>
-                            <p>{{contact.messages[contact.messages.length - 1].message}}</p>
-                        </div>
-
-                        <div class="ora">12:00</div>
                     </div>
-                    <!--  -->
+
 
                 </div>    
             </div>
